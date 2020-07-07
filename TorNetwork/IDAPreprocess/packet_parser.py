@@ -11,16 +11,11 @@ __last modified time__ = "2019-09-25"
 
 
 """
-import os
-import json
 import dpkt
-import tqdm
 import socket
-import itertools
 import numpy as np
 
 from scipy.stats import skew
-from scapy.all import rdpcap
 
 
 class flowGenerator:
@@ -79,8 +74,6 @@ class flowGenerator:
         except AttributeError:
             pass
         except dpkt.dpkt.UnpackError:
-            pass
-        except dpkt.dpkt.NeedData:
             pass
 
         return tor_cell_list, total_time_list, out_time_list, in_time_list
